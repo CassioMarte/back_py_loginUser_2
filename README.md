@@ -19,3 +19,5 @@ user_auth_backend/
 │
 ├── requirements.txt       # Dependências do projeto
 └── .env                   # Variáveis de ambiente
+
+https://chatgpt.com/c/675bd77c-7170-8005-8fd6-cd2380a354bc

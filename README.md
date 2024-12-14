@@ -31,19 +31,20 @@ python -m venv venv
 Ative o ambiente virtual
 venv\Scripts\activate    ou   source venv/bin/activate
 
+     No python é ideal criar um ambient virtual similar ao node_modules 
+
 
 No diretório do seu projeto, crie um arquivo chamado
  requirements.txt
 
  coloque : 
-   fastapi
-   uvicorn
-   sqlalchemy
-   pydantic
-   python-dotenv
-   bcrypt
-   python-jose[cryptography]
-
+   fastapi        # Framework principal, equivalente ao Express
+   uvicorn        # Servidor ASGI, semelhante ao nodemon
+   sqlalchemy     # ORM, semelhante ao TypeORM
+   pydantic       # Validação e tipagem, equivalente ao Joi
+   python-dotenv  # Carrega variáveis do arquivo .env
+   bcrypt         # Hashing de senhas
+   python-jose[cryptography]  # Geração e validação de JWTs
 
 
 No terminal do VSCode, certifique-se de que o ambiente virtual está ativado e execute o seguinte comando:
@@ -177,3 +178,7 @@ def login_user(user: UserCreate, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="Invalid credentials")
     token = create_access_token(data={"sub": db_user.email})
     return {"access_token": token, "token_type": "bearer"}
+
+
+COMANDO PARA RODAR EM UMA PORT 
+             uvicorn app.main:app --reload --port 8000

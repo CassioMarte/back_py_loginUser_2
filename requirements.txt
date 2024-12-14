@@ -5,3 +5,6 @@ pydantic
 python-dotenv
 bcrypt
 python-jose[cryptography]
+
+
+#Lista de dependências do projeto, equivalente ao package.json em projetos Node.js.
